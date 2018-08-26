@@ -26,12 +26,14 @@ describe 'Articles Index' do
 
         expect(current_path).to eq(new_article_path)
 
+        # visit new_article_path
+
         fill_in "article[title]", with: "New Title!"
         fill_in "article[body]",  with: "New Body!"
         click_on "Create Article"
 
         expect(page).to have_content("New Title!")
-        expect(page).to have_content("New TBody!")
+        expect(page).to have_content("New Body!")
       end
     end
   end
